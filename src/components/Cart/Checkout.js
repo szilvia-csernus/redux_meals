@@ -55,7 +55,6 @@ const Checkout = props => {
     const confirmHandler = event => {
         event.preventDefault();
 
-        console.log("form handler!")
         if (!formValid) {
             return;
         }

@@ -25,8 +25,8 @@ const Meals = () => {
         }
 
         const configData = {
-            url: 'https://food-order-app-b8109-default-rtdb.europe-west1.firebasedatabase.app/meals.json'
-        }
+          url: "https://redux-meals-9213d-default-rtdb.europe-west1.firebasedatabase.app/meals.json",
+        };
 
         sendRequest(configData, apply);
 

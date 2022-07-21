@@ -1,6 +1,5 @@
-
-import { useContext, useEffect, useState } from 'react';
-import CartContext from '../../store/cart-context';
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import CartIcon from '../Cart/CartIcon';
 import classes from './HeaderCartButton.module.css';
 
@@ -8,16 +7,10 @@ import classes from './HeaderCartButton.module.css';
 const HeaderCartButton = props => {
     const [isToBump, setIsToBump] = useState(false);
 
-    const cartCtx = useContext(CartContext);
-
-    const { items } = cartCtx;
-
-    const numberOfCartItems = items.reduce((currentAmount, item) => {
-        return currentAmount + item.amount
-    }, 0)
+    const itemsQuantity = useSelector(state => state.cart.totalQuantity);
 
     useEffect(() => {
-        if (items.length > 0) {
+        if (itemsQuantity > 0) {
             setIsToBump(true)
         }
         // the animation has to be stopped so it can be started again. Otherwise,
@@ -29,7 +22,7 @@ const HeaderCartButton = props => {
         return () => {
             clearTimeout(timer)
         }
-    }, [items])
+    }, [itemsQuantity])
     
 
     const badgeClasses = `${classes.badge} ${isToBump && classes.bump}`
@@ -38,7 +31,7 @@ const HeaderCartButton = props => {
         <button className={classes.button} onClick={props.onClick}>
             <span className={classes.icon}><CartIcon/></span>
             <span>Your Cart</span>
-            <span className={badgeClasses}>{numberOfCartItems}</span>
+            <span className={badgeClasses}>{itemsQuantity}</span>
         </button>
     )
 }
