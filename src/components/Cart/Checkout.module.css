@@ -1,0 +1,111 @@
+.form {
+    margin: 1rem 0;
+    height: 19rem;
+    overflow: auto;
+}
+
+.control {
+    margin-bottom: 0.5rem;
+}
+
+.control label {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+    display: block;
+}
+
+.control input {
+    font: inherit;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 20rem;
+    max-width: 100%;
+}
+.actions {
+    text-align: right;
+}
+
+.actions button {
+    font: inherit;
+    color: white;
+    cursor: pointer;
+    background-color: #c20202;
+    border: 1px solid #c20202;
+    padding: 0.5rem 2rem;
+    border-radius: 25px;
+    margin-left: 1rem;
+}
+
+.actions button:hover,
+.actions button:active {
+    background-color: #880000;
+    border-color: #880000;
+    color: white;
+}
+
+.actions button:disabled {
+    background-color:#493c3cb0;
+    border-color: #493c3c98;
+}
+
+.actions .button--alt {
+    background-color: transparent;
+    color: #c20202;
+}
+
+.actions .button--alt:hover,
+.actions .button--alt:active {
+    background-color: #c20202;
+    border-color: #c20202;
+    color: white;
+}
+
+.actions .button {
+    background-color: #c20202;
+    color: white;
+}
+
+/* .actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.actions button {
+    font: inherit;
+    color: #5a1a01;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    border-radius: 25px;
+    padding: 0.5rem 2rem;
+}
+
+.actions button:hover,
+.actions button:active {
+    background-color: #ffe6dc;
+}
+
+.actions button:disabled {
+    background-color: #ccc;
+}
+
+.actions .submit {
+    border: 1px solid #5a1a01;
+    background-color: #5a1a01;
+    color: white;
+}
+
+.actions .submit:hover,
+.actions .submit:active {
+    background-color: #7a2706;
+} */
+
+.invalid label {
+    color: #ca3e51;
+}
+
+.invalid input {
+    border-color: #aa0b20;
+    background-color: #ffeff1;
+}
