@@ -6,22 +6,22 @@ const initialState = {
 }
 
 const inputReducer = (state, action) => {
-    if (action.type === "INPUT") {
-        return {
+    switch (action.type) {
+        case ("INPUT"):
+            return {
             value: action.value,
             isTouched: state.isTouched
         }
-    }
-    if (action.type === "BLUR") {
-        return {
+        case ("BLUR"):
+            return {
             value: state.value,
             isTouched: true
         }
-    }
-    if (action.type === "RESET") {
-        return initialState
-    }
-    return state
+        case ("RESET"):
+            return initialState
+        
+        default: return state
+    } 
 }
 
 const useInput = (validateInput) => {

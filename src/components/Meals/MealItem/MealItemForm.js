@@ -17,6 +17,8 @@ const MealItemForm = props => {
         if (enteredAmount.trim().length === 0 || enteredAmountNumber < 1 || enteredAmountNumber > 5) {
             setAmountIsValid(false);
             return;
+        } else {
+            setAmountIsValid(true)
         }
 
         props.onAddToCart(enteredAmount)
@@ -36,7 +38,7 @@ const MealItemForm = props => {
                     }}
             />
             <button>Add</button>
-            {!amountIsValid && <p>Amount is invalid!</p>}
+            {!amountIsValid && <p>Max order is 5 portions!</p>}
         </form>
     )
 }

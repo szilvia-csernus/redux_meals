@@ -6,7 +6,7 @@ class ErrorBoundary extends Component {
         this.state = { hasError: false }
     }
 
-    // by adding 'componentDidCatch' lifecycle method makes the compnent 
+    // by adding 'componentDidCatch' lifecycle method makes the component 
     // an error boundary which can be used as a wrapper.
     componentDidCatch(error) {
         console.log(error)
